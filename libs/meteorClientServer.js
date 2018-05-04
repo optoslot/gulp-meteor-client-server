@@ -117,6 +117,8 @@ class SourceProcessor {
 			desiredTarget = Target.Client;
 		} else if (arch === Arch.Server) {
 			desiredTarget = Target.Server;
+		} else {
+			throw new Error('Unknown arch');
 		}
 
 		const sourcePlume = new SourcePlume();
