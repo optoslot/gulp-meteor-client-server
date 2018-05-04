@@ -190,15 +190,22 @@ class SourceProcessor {
 } // class
 
 //==================================================================================================
+// Module
+//==================================================================================================
+
+const thisModule = {};
+
+thisModule.Arch = Arch;
+
+thisModule.transform = (source, arch) => {
+	const sourceProcessor = new SourceProcessor();
+	return sourceProcessor.processSource(source, arch);
+};
+
+//==================================================================================================
 // Exports
 //==================================================================================================
 
-module.exports = {
-	Arch: Arch,
-	transform: (source, arch) => {
-		const sourceProcessor = new SourceProcessor();
-		return sourceProcessor.processSource(source, arch);
-	}
-};
+module.exports = thisModule;
 
 // EOF
