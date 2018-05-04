@@ -57,7 +57,7 @@ class SourcePlume {
 		if (typeof strOrArr === 'string') {
 			return this.endsWithString(strOrArr);
 		} else {
-			for (let str of strOrArr) {
+			for (const str of strOrArr) {
 				if (this.endsWithString(str)) {
 					return true;
 				}
